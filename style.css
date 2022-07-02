@@ -12,10 +12,11 @@ header{
   z-index: -1;
 }
 
-.background,.foreground{
+.background,.lateral-bars,.foreground{
   
   position: absolute;
   object-fit: cover;
+  display: flex;
   
 }
 .background{
@@ -24,6 +25,13 @@ header{
   width: 100%;
   
 }
+
+.lateral-bars{
+  transform: translateZ(-5px) scale(1.5);
+  height: 100%;
+  width: 100%;
+}
+
 .foreground{
   position: relative;
   align-items: center;
@@ -34,7 +42,8 @@ header{
   
 }
 
-.beer-background,.beer-can,.title{
+.beer-background,.beer-can,.title
+{
   position: absolute;
   object-fit: cover;
 }
@@ -42,9 +51,26 @@ header{
 .beer-background{
   transform: translateZ(-10px)scale(1.5);
 }
-.beer-can{
 
+.freckles{
+  transform: translateZ(-7px)scale(1.5);
+}
+
+.freckles-image{
+  animation: hover 2s cubic-bezier(0.04, 0.02, 1, 1);
+  animation-direction: reverse;
+  animation-iteration-count: infinite;
+}
+
+
+
+.beer-can{
+  
   transform: translateZ(-5px)scale(1);
+}
+.beer-can:hover{
+  filter: drop-shadow(0px 0px 30px rgb(255, 92, 214));
+  cursor:pointer;
 }
 
 .beer-can-image{
@@ -71,9 +97,20 @@ header{
   text-shadow: 0px 0px 10px grey;
 }
 
+.liquid,.background-pres{
+  
+  position: relative;
+  align-items: center;
+  resize: both;
+  display: flex;
+  justify-content: center;
+}
+
 .wrapper{
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: 0px;
 }
