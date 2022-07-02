@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+}
+
+header{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background,.foreground{
+  
+  position: absolute;
+  object-fit: cover;
+  
+}
+.background{
+  transform: translateZ(-10px) scale(2);
+  height: 100%;
+  width: 100%;
+  
+}
+.foreground{
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+  z-index: 1;
+  
+}
+
+.beer-background,.beer-can,.title{
+  position: absolute;
+  object-fit: cover;
+}
+
+.beer-background{
+  transform: translateZ(-10px)scale(1.5);
+}
+.beer-can{
+
+  transform: translateZ(-5px)scale(1);
+}
+
+.beer-can-image{
+  
+  animation: hover 2s cubic-bezier(0.04, 0.02, 1, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes hover {
+ 
+
+  25%{
+    transform: translateY(-15px)  ;
+  }
+  75%{
+    transform: translateY(15px) ;
+  }
+  
+}
+
+.title{
+  font-size: 7rem;
+  color: white;
+  text-shadow: 0px 0px 10px grey;
+}
+
+.wrapper{
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
